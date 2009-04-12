@@ -21,6 +21,7 @@ BuildRequires:  expat-devel, python-devel, chrpath
 BuildRequires:  minizip-devel, uriparser-devel, zlib-devel
 BuildRequires:  boost-devel
 BuildRequires:  autoconf, libtool
+BuildRequires:  libgcj-devel
 Requires:       python, java
 
 %description
@@ -100,8 +101,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkml/*.so.*
 %{python_sitearch}/*.so
 %{python_sitearch}/*.py
-#%{python_sitearch}/*.pyc
-#%{python_sitearch}/*.pyo
+%{python_sitearch}/*.pyc
+%{python_sitearch}/*.pyo
 
 %files devel
 %defattr(-,root,root,-)
@@ -111,6 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkml/*.so
 
 %changelog
+* Sun Apr 12 2009 Rakesh Pandit <rakesh@fedoraproject.org> 0.6.1-4
+- Included *pyc and pyo files in %%files and added BuildRequires libgcj-devel.
+
 * Sun Apr 12 2009 Rakesh Pandit <rakesh@fedoraproject.org> 0.6.1-3
 - libkml-0.6.1.configure_ac.patch patch for swig > 1.3.35
 
