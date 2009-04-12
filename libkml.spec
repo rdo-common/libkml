@@ -3,7 +3,7 @@
 
 Name:           libkml
 Version:        0.6.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A KML library written in C++ with bindings to other languagues
 
 Group:          Development/Libraries
