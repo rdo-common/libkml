@@ -3,15 +3,15 @@
 
 Name:           libkml
 Version:        0.6.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A KML library written in C++ with bindings to other languagues
 
 Group:          Development/Libraries
 License:        BSD
 URL:            http://code.google.com/p/%{name}/
 Source0:        http://%{name}.googlecode.com/files/%{name}-%{version}.tar.gz
-#Patch0:         libkml-string.patch
-Patch1:         libkml-third_party_removal.diff
+Patch0:         libkml-third_party_removal.diff
+Patch1:         libkml-0.6.1.configure_ac.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 # requires swig >= 1.3.35
@@ -40,8 +40,8 @@ developing applications that use %{name}.
 %prep
 %setup -q
 rm -rf third_party
-%patch1 -p0 -b .third_party
-#%patch0 -p1 -b .string
+%patch0 -p0 -b .third_party
+%patch1 -p1 -b .configure_ac
 
 %build
 autoreconf -fi
@@ -100,8 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkml/*.so.*
 %{python_sitearch}/*.so
 %{python_sitearch}/*.py
-%{python_sitearch}/*.pyc
-%{python_sitearch}/*.pyo
+#%{python_sitearch}/*.pyc
+#%{python_sitearch}/*.pyo
 
 %files devel
 %defattr(-,root,root,-)
@@ -111,6 +111,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkml/*.so
 
 %changelog
+* Sun Apr 12 2009 Rakesh Pandit <rakesh@fedoraproject.org> 0.6.1-3
+- libkml-0.6.1.configure_ac.patch patch for swig > 1.3.35
+
 * Sat Mar 07 2009 Rakesh Pandit <rakesh@fedoraproject.org> 0.6.1-2
 - updated to 0.6.1
 - libkml-third_party_removal.diff Removes third part dependency
