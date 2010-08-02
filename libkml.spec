@@ -3,7 +3,7 @@
 
 Name:           libkml
 Version:        0.6.1
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        A KML library written in C++ with bindings to other languagues
 
 Group:          Development/Libraries
@@ -12,6 +12,7 @@ URL:            http://code.google.com/p/%{name}/
 Source0:        http://%{name}.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:         libkml-third_party_removal.diff
 Patch1:         libkml-0.6.1.configure_ac.patch
+Patch2:         libkml-fix-gcc-warning.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 # requires swig >= 1.3.35
@@ -43,6 +44,7 @@ developing applications that use %{name}.
 rm -rf third_party
 %patch0 -p0 -b .third_party
 %patch1 -p1 -b .configure_ac
+%patch2 -p1 -b .fixwarning
 
 %build
 autoreconf -fi
@@ -112,6 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkml/*.so
 
 %changelog
+* Mon Aug 02 2010 Orcan Ogetbil <oget[dot]fedora[at]gmail[dot]com> - 0.6.1-7
+- Fix gcc warning that lead to failure due to -Werror flag
+
 * Wed Jul 21 2010 David Malcolm <dmalcolm@redhat.com> - 0.6.1-6
 - Rebuilt for https://fedoraproject.org/wiki/Features/Python_2.7/MassRebuild
 
