@@ -3,7 +3,7 @@
 
 Name:           libkml
 Version:        0.6.1
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        A KML library written in C++ with bindings to other languagues
 
 Group:          Development/Libraries
@@ -114,6 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkml/*.so
 
 %changelog
+* Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.1-8
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Mon Aug 02 2010 Orcan Ogetbil <oget[dot]fedora[at]gmail[dot]com> - 0.6.1-7
 - Fix gcc warning that lead to failure due to -Werror flag
 
