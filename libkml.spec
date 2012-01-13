@@ -3,7 +3,7 @@
 
 Name:           libkml
 Version:        0.6.1
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        A KML library written in C++ with bindings to other languagues
 
 Group:          Development/Libraries
@@ -114,6 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkml/*.so
 
 %changelog
+* Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.1-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
 * Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.6.1-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
 
