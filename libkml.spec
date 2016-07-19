@@ -1,6 +1,6 @@
 Name:           libkml
 Version:        1.3.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Reference implementation of OGC KML 2.2
 
 License:        BSD
@@ -119,6 +119,9 @@ ctest -V
 %{_libdir}/cmake/%{name}/
 
 %changelog
+* Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.3.0-3
+- https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
+
 * Fri Apr 08 2016 Sandro Mani <manisandro@gmail.com> - 1.3.0-2
 - Don't call it Google's reference implementation in Summary/Description
 - Update Source URL
