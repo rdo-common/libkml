@@ -74,6 +74,7 @@ developing applications that use %{name}.
 %patch3 -p1
 %patch4 -p1
 
+sed -i 's/find_package(ZLIB 1.2.8)/find_package(ZLIB)/' CMakeLists.txt
 
 %build
 %cmake -DWITH_SWIG=ON -DWITH_PYTHON=ON -DWITH_JAVA=ON \
